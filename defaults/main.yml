@@ -1,0 +1,8 @@
+---
+# or 'dev'
+dart_channel: stable
+dart_release: '1.18.1'
+dart_platform: linux
+dart_arch: x64
+dart_mirror: https://storage.googleapis.com/dart-archive/channels
+dart_parent_install_dir: /opt

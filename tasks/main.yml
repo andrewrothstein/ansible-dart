@@ -1,0 +1,43 @@
+---
+- name: downloading binaries...
+  become: yes
+  become_user: root
+  get_url: >-
+    url={{dart_sdk_url}}
+    dest=/tmp/{{dart_sdk_zip}}
+    mode=0644
+
+- name: create version specific directory
+  become: yes
+  become_user: root
+  file: >-
+    path={{dart_parent_install_dir}}/{{dart_sdk_name}}
+    state=directory
+    mode=0755
+    
+- name: unarchive...
+  become: yes
+  become_user: root
+  unarchive: >-
+    src=/tmp/{{dart_sdk_zip}}
+    dest={{dart_parent_install_dir}}/{{dart_sdk_name}}
+    creates={{dart_parent_install_dir}}/{{dart_sdk_name}}/dart-sdk
+
+- name: link
+  become: yes
+  become_user: root
+  file: >-
+    src={{dart_parent_install_dir}}/{{dart_sdk_name}}/dart-sdk
+    dest={{dart_parent_install_dir}}/dart-sdk
+    state=link
+
+- name: add to path
+  become: yes
+  become_user: root
+  with_items:
+    - etc/profile.d/dart.sh
+  template: >-
+    src={{item}}.j2
+    dest=/{{item}}
+    mode=0644
+    

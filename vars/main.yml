@@ -1,0 +1,5 @@
+---
+dart_sdk_name: 'dartsdk-{{dart_platform}}-{{dart_arch}}-release'
+dart_sdk_subdir: dart-sdk
+dart_sdk_zip: '{{dart_sdk_name}}.zip'
+dart_sdk_url: '{{dart_mirror}}/{{dart_channel}}/release/{{dart_release}}/sdk/{{dart_sdk_zip}}'
