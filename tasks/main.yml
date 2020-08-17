@@ -1,43 +1,76 @@
 ---
-- name: downloading binaries...
+- name: resolve platform specific vars
+  include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
+      skip: true
+      paths:
+        - '{{ role_path }}/vars'
+- name: check for install at {{ dart_install_dir }}..
+  become: yes
+  stat:
+    path: '{{ dart_install_dir }}'
+  changed_when: False
+  register: dart_binary
+- when: not dart_binary.stat.exists
+  block:
+    - name: download {{ dart_url }}...
+      become: yes
+      become_user: root
+      get_url:
+        url: '{{ dart_url }}'
+        dest: /tmp/{{ dart_zip }}
+        mode: 0644
+        checksum: '{{ dart_checksum }}'
+    - name: mkdir {{ dart_install_dir }}...
+      become: yes
+      become_user: root
+      file:
+        path: '{{ dart_install_dir }}'
+        state: directory
+        mode: 0755
+    - name: unarchive /tmp/{{ dart_zip }}
+      become: yes
+      become_user: root
+      unarchive:
+        remote_src: yes
+        src: /tmp/{{ dart_zip }}
+        dest: '{{ dart_install_dir }}'
+        creates: '{{ dart_sdk_install_dir }}'
+    - name: chmod 0755 bin dirs
+      with_items:
+        - '{{ dart_sdk_install_dir }}'
+        - '{{ dart_sdk_install_dir }}/bin'
+      become: yes
+      become_user: root
+      file:
+        path: '{{ item }}'
+        state: directory
+        mode: 0755
+  always:
+    - name: rm -f /tmp/{{ dart_zip }}
+      become: yes
+      become_user: root
+      file:
+        path: /tmp/{{ dart_zip }}
+        state: absent
+- name: link {{ dart_sdk_link_dir }} to {{ dart_sdk_install_dir }}
   become: yes
   become_user: root
-  get_url: >-
-    url={{dart_sdk_url}}
-    dest=/tmp/{{dart_sdk_zip}}
-    mode=0644
-
-- name: create version specific directory
-  become: yes
-  become_user: root
-  file: >-
-    path={{dart_parent_install_dir}}/{{dart_sdk_name}}
-    state=directory
-    mode=0755
-    
-- name: unarchive...
-  become: yes
-  become_user: root
-  unarchive: >-
-    src=/tmp/{{dart_sdk_zip}}
-    dest={{dart_parent_install_dir}}/{{dart_sdk_name}}
-    creates={{dart_parent_install_dir}}/{{dart_sdk_name}}/dart-sdk
-
-- name: link
-  become: yes
-  become_user: root
-  file: >-
-    src={{dart_parent_install_dir}}/{{dart_sdk_name}}/dart-sdk
-    dest={{dart_parent_install_dir}}/dart-sdk
-    state=link
-
+  file:
+    src: '{{ dart_sdk_install_dir }}'
+    dest: '{{ dart_sdk_link_dir }}'
+    state: link
 - name: add to path
   become: yes
   become_user: root
   with_items:
-    - etc/profile.d/dart.sh
-  template: >-
-    src={{item}}.j2
-    dest=/{{item}}
-    mode=0644
-    
+    - f: dart.sh
+      d: /etc/profile.d
+  template:
+    src: '{{ item.f }}.j2'
+    dest: '{{ item.d }}/{{ item.f }}'
+    mode: '{{ item.m | default("0644") }}'

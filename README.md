@@ -1,7 +1,7 @@
 andrewrothstein.dart
 ====================
 
-Installs the Dart SDK
+Installs the [Dart SDK](https://dart.dev/).
 
 Requirements
 ------------

@@ -1,4 +1,9 @@
 ---
 - hosts: all
   roles:
-    - { role: '.' }
+  - role: '{{ playbook_dir }}'
+  tasks:
+  - command: /usr/local/dart-sdk/bin/dart --version
+    register: dart_test_output
+  - debug:
+      msg: '{{ dart_test_output.stderr }}'

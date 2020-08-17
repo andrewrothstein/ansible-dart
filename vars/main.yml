@@ -1,5 +1,8 @@
 ---
-dart_sdk_name: 'dartsdk-{{dart_platform}}-{{dart_arch}}-release'
-dart_sdk_subdir: dart-sdk
-dart_sdk_zip: '{{dart_sdk_name}}.zip'
-dart_sdk_url: '{{dart_mirror}}/{{dart_channel}}/release/{{dart_release}}/sdk/{{dart_sdk_zip}}'
+dart_platform: '{{ dart_os }}-{{ dart_arch }}'
+dart_zip: dartsdk-{{ dart_platform }}-release.zip
+dart_url: '{{ dart_mirror }}/{{ dart_channel }}/release/{{ dart_ver }}/sdk/{{ dart_zip }}'
+dart_checksum: '{{ dart_checksums[dart_ver][dart_channel][dart_platform] }}'
+dart_install_dir: '{{ dart_parent_install_dir }}/dart-{{ dart_ver }}'
+dart_sdk_install_dir: '{{ dart_install_dir }}/dart-sdk'
+dart_sdk_link_dir: '{{ dart_parent_install_dir }}/dart-sdk'
