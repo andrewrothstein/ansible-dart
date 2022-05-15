@@ -3,7 +3,8 @@
   roles:
   - role: '{{ playbook_dir }}'
   tasks:
-  - command: /usr/local/dart-sdk/bin/dart --version
+  - command: sh -l -c 'dart --version'
     register: dart_test_output
-  - debug:
-      msg: '{{ dart_test_output.stderr }}'
+  - name: dart --version
+    debug:
+      msg: '{{ dart_test_output.stdout }}'

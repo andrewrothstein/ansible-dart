@@ -1,5 +1,5 @@
 ---
-dart_ver: 2.9.1
+dart_ver: 2.17.0
 dart_channel: stable
 dart_os: linux
 dart_arch: x64
@@ -22,3 +22,19 @@ dart_checksums:
         windows-ia32: sha256:8147be1dab4e981c397182d1e5b3de4259197111ac670857feb140821558866c
         # https://storage.googleapis.com/dart-archive/channels/stable/release/2.9.1/sdk/dartsdk-windows-x64-release.zip.sha256sum
         windows-x64: sha256:b6e608297160ac76da27505a030b6567442997e5bb110654ed882546e49b34b8
+  '2.17.0':
+    stable:
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.0/sdk/dartsdk-macos-x64-release.zip.sha256sum
+        macos-x64: sha256:3f06b15101c852145608ecb7215746b51c8ff4bb6c72aa1424f3997debcdef1b
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.0/sdk/dartsdk-linux-x64-release.zip.sha256sum
+        linux-x64: sha256:57b8fd964e47c81d467aeb95b099a670ab7e8f54a1cd74d45bcd1fdc77913d86
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.0/sdk/dartsdk-linux-ia32-release.zip.sha256sum
+        linux-ia32: sha256:616c45c1b706becb0e48be12e4ee23a8bcf17541ef6d577d8b870b372167fdcb
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.0/sdk/dartsdk-linux-arm-release.zip.sha256sum
+        linux-arm: sha256:c522ca1744de506276d19c1a5c120526daec142d2d7595d6915f77838066c2e8
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.0/sdk/dartsdk-linux-arm64-release.zip.sha256sum
+        linux-arm64: sha256:05a1db0fd84585877d6180858346d7c53c7ef89433667db3b85f3f2e5fa7036b
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.0/sdk/dartsdk-windows-ia32-release.zip.sha256sum
+        windows-ia32: sha256:aa89103f234ee1af59c4f343a4a8276c4ba4061a34bb1aa30ecfd2097251d3fb
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.0/sdk/dartsdk-windows-x64-release.zip.sha256sum
+        windows-x64: sha256:a64f37f50124404d7d9b83cd54fea9b372b4006bd3fbe43de89c2732f156d9a3
