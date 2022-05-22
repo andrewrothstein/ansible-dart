@@ -1,5 +1,5 @@
 ---
-dart_ver: 2.17.0
+dart_ver: 2.17.1
 dart_channel: stable
 dart_os: linux
 dart_arch: x64
@@ -38,3 +38,19 @@ dart_checksums:
         windows-ia32: sha256:aa89103f234ee1af59c4f343a4a8276c4ba4061a34bb1aa30ecfd2097251d3fb
         # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.0/sdk/dartsdk-windows-x64-release.zip.sha256sum
         windows-x64: sha256:a64f37f50124404d7d9b83cd54fea9b372b4006bd3fbe43de89c2732f156d9a3
+  '2.17.1':
+    stable:
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.1/sdk/dartsdk-macos-x64-release.zip.sha256sum
+        macos-x64: sha256:05bf24962fe1c4a579b91f418b7c83de9509159eb5588cff58b401350d40061f
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.1/sdk/dartsdk-linux-x64-release.zip.sha256sum
+        linux-x64: sha256:696862ad8b7ecdceed43b85d4eb8279bc0f8dbb5b61b9e9afc86c54ecd7b40a2
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.1/sdk/dartsdk-linux-ia32-release.zip.sha256sum
+        linux-ia32: sha256:f17adb112d5d590a8ee224fdfe64b77474093d866783e2a4373855698f353207
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.1/sdk/dartsdk-linux-arm-release.zip.sha256sum
+        linux-arm: sha256:c2b3b3b8f5a5e21702ee59389ded2de4812d3239fd81a5ba82fd7f0442b7f2b7
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.1/sdk/dartsdk-linux-arm64-release.zip.sha256sum
+        linux-arm64: sha256:e796c032598392526ef2438c9cb5a4d146ffccadb0b9af1215eed322a39926a3
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.1/sdk/dartsdk-windows-ia32-release.zip.sha256sum
+        windows-ia32: sha256:aa6210465519272cb94ee51dff93a44075dddd2d32cd328ea047fdb4741dc457
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.1/sdk/dartsdk-windows-x64-release.zip.sha256sum
+        windows-x64: sha256:a246b85e8c1097670a751e8b3a902872e9a792c2f66b8d06151fe03552910337
