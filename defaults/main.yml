@@ -1,5 +1,5 @@
 ---
-dart_ver: 2.17.1
+dart_ver: 2.17.3
 dart_channel: stable
 dart_os: linux
 dart_arch: x64
@@ -54,3 +54,19 @@ dart_checksums:
         windows-ia32: sha256:aa6210465519272cb94ee51dff93a44075dddd2d32cd328ea047fdb4741dc457
         # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.1/sdk/dartsdk-windows-x64-release.zip.sha256sum
         windows-x64: sha256:a246b85e8c1097670a751e8b3a902872e9a792c2f66b8d06151fe03552910337
+  '2.17.3':
+    stable:
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.3/sdk/dartsdk-macos-x64-release.zip.sha256sum
+        macos-x64: sha256:fbacb894e192f15c96ad908c4a02c5ba7d04fd63821a51c413c279710895a546
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.3/sdk/dartsdk-linux-x64-release.zip.sha256sum
+        linux-x64: sha256:68f9a09ac61aab1c135ad2e64a39bfac088900d439941dee275d8ea8c8541b95
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.3/sdk/dartsdk-linux-ia32-release.zip.sha256sum
+        linux-ia32: sha256:04520ddfa39445a5888015223b7e4690c9210811e7aad2983c955eb5d2797192
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.3/sdk/dartsdk-linux-arm-release.zip.sha256sum
+        linux-arm: sha256:75d1f5969ae12298d27b00bbe5866cdfcad422102929b52dc035c264ecc979a9
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.3/sdk/dartsdk-linux-arm64-release.zip.sha256sum
+        linux-arm64: sha256:c993247b5adaab432fbb4d4b144d5a52c4c4011656312d2b008ef6ec51eaeadb
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.3/sdk/dartsdk-windows-ia32-release.zip.sha256sum
+        windows-ia32: sha256:7decdf5bcad3bd87aac2309ab673266ad365838766ce600b29cb6f44a12c0dc2
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.3/sdk/dartsdk-windows-x64-release.zip.sha256sum
+        windows-x64: sha256:1f4cbb733051ae84f26507444aeb01dad6dd9a61276a96a3c8e2046f5094aa93
