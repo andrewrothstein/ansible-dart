@@ -1,5 +1,5 @@
 ---
-dart_ver: 2.17.3
+dart_ver: 2.17.5
 dart_channel: stable
 dart_os: linux
 dart_arch: x64
@@ -70,3 +70,19 @@ dart_checksums:
         windows-ia32: sha256:7decdf5bcad3bd87aac2309ab673266ad365838766ce600b29cb6f44a12c0dc2
         # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.3/sdk/dartsdk-windows-x64-release.zip.sha256sum
         windows-x64: sha256:1f4cbb733051ae84f26507444aeb01dad6dd9a61276a96a3c8e2046f5094aa93
+  '2.17.5':
+    stable:
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.5/sdk/dartsdk-macos-x64-release.zip.sha256sum
+        macos-x64: sha256:55e2ffe2ddbcef88e7a7fcb87348ff10934234f0ecbd9b463316018e8bb7d8a8
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.5/sdk/dartsdk-linux-x64-release.zip.sha256sum
+        linux-x64: sha256:0052467a23ec8d46523be0f29263881444e0da3228860eb6b69de0859aca2459
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.5/sdk/dartsdk-linux-ia32-release.zip.sha256sum
+        linux-ia32: sha256:26dd57fd191638196374bc77059a988b5510d7cb169d3032a2bde47ccc4f1957
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.5/sdk/dartsdk-linux-arm-release.zip.sha256sum
+        linux-arm: sha256:00e855429cd7345a56235a7b216967d23c22d0c1a0417249c4323b1cbfe9af62
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.5/sdk/dartsdk-linux-arm64-release.zip.sha256sum
+        linux-arm64: sha256:0482ba914c7e9befc67d1ff0057bfcae354d6cfeb0d4716f1ff44623089a2688
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.5/sdk/dartsdk-windows-ia32-release.zip.sha256sum
+        windows-ia32: sha256:acf55ccb75a204b7e6caf9ee57fa2687bc90e4c8389c781204ff0df2792a1d82
+        # https://storage.googleapis.com/dart-archive/channels/stable/release/2.17.5/sdk/dartsdk-windows-x64-release.zip.sha256sum
+        windows-x64: sha256:2243b18af1b9083ce8ad4e784cdc6692afc9263a3579e990b3a6f3b98a30377d
