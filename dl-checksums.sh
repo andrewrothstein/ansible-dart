@@ -25,6 +25,7 @@ dl_ver() {
     printf "  '%s':\n" $ver
     printf "    %s:\n" $channel
     dl $ver $channel macos x64
+    dl $ver $channel macos arm64
     dl $ver $channel linux x64
     dl $ver $channel linux ia32
     dl $ver $channel linux arm
@@ -33,4 +34,4 @@ dl_ver() {
     dl $ver $channel windows x64
 }
 
-dl_ver ${1:-2.17.5}
+dl_ver ${1:-2.17.6}
