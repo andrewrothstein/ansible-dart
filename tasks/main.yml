@@ -1,4 +1,6 @@
 ---
+- include_role:
+    name: andrewrothstein.unarchive-deps
 - name: resolve platform specific vars
   include_vars: '{{ item }}'
   with_first_found:
@@ -10,62 +12,62 @@
       paths:
         - '{{ role_path }}/vars'
 - name: check for install at {{ dart_install_dir }}..
-  become: yes
+  become: true
   stat:
     path: '{{ dart_install_dir }}'
-  changed_when: False
+  changed_when: false
   register: dart_binary
 - when: not dart_binary.stat.exists
   block:
-    - name: download {{ dart_url }}...
-      become: yes
+    - name: downloading {{ dart_url }} to {{ dart_tmp_zip }}
+      become: true
       become_user: root
       get_url:
         url: '{{ dart_url }}'
-        dest: /tmp/{{ dart_zip }}
+        dest: '{{ dart_tmp_zip }}'
         mode: 0644
         checksum: '{{ dart_checksum }}'
     - name: mkdir {{ dart_install_dir }}...
-      become: yes
+      become: true
       become_user: root
       file:
         path: '{{ dart_install_dir }}'
         state: directory
         mode: 0755
-    - name: unarchive /tmp/{{ dart_zip }}
-      become: yes
+    - name: unarchive {{ dart_tmp_zip }}
+      become: true
       become_user: root
       unarchive:
-        remote_src: yes
-        src: /tmp/{{ dart_zip }}
+        remote_src: true
+        src: '{{ dart_tmp_zip }}'
         dest: '{{ dart_install_dir }}'
         creates: '{{ dart_sdk_install_dir }}'
     - name: chmod 0755 bin dirs
       with_items:
         - '{{ dart_sdk_install_dir }}'
         - '{{ dart_sdk_install_dir }}/bin'
-      become: yes
+      become: true
       become_user: root
       file:
         path: '{{ item }}'
         state: directory
         mode: 0755
   always:
-    - name: rm -f /tmp/{{ dart_zip }}
-      become: yes
+    - name: rm -f {{ dart_tmp_zip }}
+      become: true
       become_user: root
       file:
-        path: /tmp/{{ dart_zip }}
+        path: '{{ dart_tmp_zip }}'
         state: absent
 - name: link {{ dart_sdk_link_dir }} to {{ dart_sdk_install_dir }}
-  become: yes
+  become: true
   become_user: root
   file:
     src: '{{ dart_sdk_install_dir }}'
     dest: '{{ dart_sdk_link_dir }}'
     state: link
-- name: add to path
-  become: yes
+- name: add to login shell path
+  become: true
   become_user: root
   with_items:
     - f: dart.sh

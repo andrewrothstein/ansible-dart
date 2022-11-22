@@ -1,7 +1,9 @@
 ---
+dart_os: '{{ dart_os_map[ansible_system] }}'
+dart_arch: '{{ dart_arch_map[ansible_architecture] }}'
 dart_platform: '{{ dart_os }}-{{ dart_arch }}'
-dart_zip: dartsdk-{{ dart_platform }}-release.zip
-dart_url: '{{ dart_mirror }}/{{ dart_channel }}/release/{{ dart_ver }}/sdk/{{ dart_zip }}'
+dart_url: '{{ dart_mirror }}/{{ dart_channel }}/release/{{ dart_ver }}/sdk/dartsdk-{{ dart_platform }}-release.zip'
+dart_tmp_zip: '{{ dart_tmp_dir | default("/tmp") }}/dartsdk-{{ dart_ver }}-{{ dart_platform }}-release.zip'
 dart_checksum: '{{ dart_checksums[dart_ver][dart_channel][dart_platform] }}'
 dart_install_dir: '{{ dart_parent_install_dir }}/dart-{{ dart_ver }}'
 dart_sdk_install_dir: '{{ dart_install_dir }}/dart-sdk'
