@@ -34,4 +34,4 @@ dl_ver() {
     dl $ver $channel windows x64
 }
 
-dl_ver ${1:-2.19.3}
+dl_ver ${1:-2.19.5}
