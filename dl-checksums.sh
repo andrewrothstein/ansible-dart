@@ -15,8 +15,8 @@ dl()
     local archive_type=${4:-zip}
     local platform="${os}-${arch}"
     local url=$MIRROR/$channel/release/$ver/sdk/dartsdk-${platform}-release.zip.sha256sum
-    printf "        # %s\n" $url
-    printf "        %s: sha256:%s\n" $platform $(curl -sSLf $url | awk '{print $1}')
+    printf "      # %s\n" $url
+    printf "      %s: sha256:%s\n" $platform $(curl -sSLf $url | awk '{print $1}')
 }
 
 dl_ver() {
@@ -34,4 +34,4 @@ dl_ver() {
     dl $ver $channel windows x64
 }
 
-dl_ver ${1:-3.0.5}
+dl_ver ${1:-3.0.6}
