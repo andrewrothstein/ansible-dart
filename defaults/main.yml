@@ -1,5 +1,5 @@
 ---
-dart_ver: 3.0.7
+dart_ver: 3.1.1
 dart_channel: stable
 dart_os_map:
   Linux: linux
@@ -292,3 +292,39 @@ dart_checksums:
       windows-ia32: sha256:e240c33e182864f529e00420c1f3e701bf9acd0da409baca9b42c0c805a71b0b
       # https://storage.googleapis.com/dart-archive/channels/stable/release/3.0.7/sdk/dartsdk-windows-x64-release.zip.sha256sum
       windows-x64: sha256:b516bd59506a53c396ced984fddacdc81e55d88ec7ebb84f6c858df3c52ae215
+  '3.1.0':
+    stable:
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.0/sdk/dartsdk-macos-x64-release.zip.sha256sum
+      macos-x64: sha256:70d6804968c116445386904801670c8804d7c01e71e714b0c8fd719d8d34b557
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.0/sdk/dartsdk-macos-arm64-release.zip.sha256sum
+      macos-arm64: sha256:af8b65c540c1e9c3e2ca6189442c1cdc2e7555f2bed69c9767e27404ecbd8f87
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.0/sdk/dartsdk-linux-x64-release.zip.sha256sum
+      linux-x64: sha256:7ce5c1560b1d8ea5ee0e6d44f1c3e7b804ddc5377b38d72fe4d43009a6c67e84
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.0/sdk/dartsdk-linux-ia32-release.zip.sha256sum
+      linux-ia32: sha256:471088e500cb8f772354819e3b929e07bc2b537b319592e7fa4531fb5830e726
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.0/sdk/dartsdk-linux-arm-release.zip.sha256sum
+      linux-arm: sha256:ac5880e17b80e046d59eeac46a77d084a8937804dd4a4564a26c53d453df890f
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.0/sdk/dartsdk-linux-arm64-release.zip.sha256sum
+      linux-arm64: sha256:fd4fcc05f1d1c82fd618b83c7d877968460c5bd425774d89add438be12a20795
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.0/sdk/dartsdk-windows-ia32-release.zip.sha256sum
+      windows-ia32: sha256:510d86fcd946a5a9bb3572575cf0964034a625def8ea22f42a987f046e9d65c4
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.0/sdk/dartsdk-windows-x64-release.zip.sha256sum
+      windows-x64: sha256:2319477dd3d7b542d0738020ecc5d6c9581cf2c45a2c1a7b0e8281d806d02f6f
+  '3.1.1':
+    stable:
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.1/sdk/dartsdk-macos-x64-release.zip.sha256sum
+      macos-x64: sha256:c34e9b2c45375f86ea4fa948215079f3ba4394ce8904f4cf33664d82dd2cbbea
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.1/sdk/dartsdk-macos-arm64-release.zip.sha256sum
+      macos-arm64: sha256:a0435e9084b714efb527a079c993cdcbea4aa3db81d6d16fe68235bf3e44f43d
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.1/sdk/dartsdk-linux-x64-release.zip.sha256sum
+      linux-x64: sha256:1353d67c3c5bdf550f170ac5203b0722be91ff32fe756c36a21c0c6c208c25a5
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.1/sdk/dartsdk-linux-ia32-release.zip.sha256sum
+      linux-ia32: sha256:c189035346e7cc7fec5f321ca08d779546a6f1904be66ee4018effc649f22790
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.1/sdk/dartsdk-linux-arm-release.zip.sha256sum
+      linux-arm: sha256:e279d5e475a257a84fa86718a559fd5760f80cfb92e3cf4f7143ed856bc3caa2
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.1/sdk/dartsdk-linux-arm64-release.zip.sha256sum
+      linux-arm64: sha256:0c5c4f2d25603bbbbc2e389c0460d84f145c44093f83b11606e9990cad7fc3bc
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.1/sdk/dartsdk-windows-ia32-release.zip.sha256sum
+      windows-ia32: sha256:abe35d4809ae96340217c131d95f5d167299d16274e5c5f0e4f1c2d5ff0f2222
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.1.1/sdk/dartsdk-windows-x64-release.zip.sha256sum
+      windows-x64: sha256:4b77d3e883a583531cf2e4c3743c63601abc0e87325c47b7e43b9f95a0607e67
