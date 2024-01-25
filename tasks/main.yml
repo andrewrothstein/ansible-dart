@@ -68,7 +68,7 @@
     src: '{{ dart_sdk_install_dir }}'
     dest: '{{ dart_sdk_link_dir }}'
     state: link
-- name: add to login shell path
+- name: Add to login shell path
   become: true
   become_user: root
   with_items:
@@ -77,4 +77,4 @@
   ansible.builtin.template:
     src: '{{ item.f }}.j2'
     dest: '{{ item.d }}/{{ item.f }}'
-    mode: '{{ item.m | default("0644") }}'
+    mode: '{{ item.m | default("644") }}'
