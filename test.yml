@@ -1,10 +1,14 @@
 ---
-- hosts: all
-  roles:
-  - role: '{{ playbook_dir }}'
+- name: Testing andrewrothstein.dart
+  hosts: all
   tasks:
-  - command: sh -l -c 'dart --version'
-    register: dart_test_output
-  - name: dart --version
-    debug:
-      msg: '{{ dart_test_output.stdout }}'
+    - name: Installing andrewrothstein.dart
+      ansible.builtin.include_role:
+        name: '{{ playbook_dir }}'
+    - name: Executing 'dart --version'
+      ansible.builtin.command: sh -l -c 'dart --version'
+      changed_when: false
+      register: dart_test_output
+    - name: Output of 'dart --version'
+      ansible.builtin.debug:
+        msg: '{{ dart_test_output.stdout }}'

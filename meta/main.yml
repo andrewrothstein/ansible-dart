@@ -1,12 +1,15 @@
 ---
 galaxy_info:
   author: Andrew Rothstein
-  description: role to install the Dart SDK
   company: BlackRock
+  description: role to install the Dart SDK
+  galaxy_tags:
+    - development
   license: MIT
-  min_ansible_version: 2.0
+  min_ansible_version: '2.0'
+  namespace: andrewrothstein
   platforms:
-    - name: Archlinux
+    - name: ArchLinux
       versions:
         - all
     - name: Debian
@@ -15,15 +18,14 @@ galaxy_info:
         - bullseye
     - name: EL
       versions:
-        - 8
-        - 9
+        - '8'
+        - '9'
     - name: Fedora
       versions:
-        - 38
-        - 39
+        - '38'
+        - '39'
     - name: Ubuntu
       versions:
         - focal
         - jammy
-  galaxy_tags:
-    - development
+  role_name: dart

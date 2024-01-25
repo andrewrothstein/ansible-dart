@@ -1,8 +1,9 @@
 ---
-- include_role:
+- name: Installing andrewrothstein.unarchivedeps
+  ansible.builtin.include_role:
     name: andrewrothstein.unarchivedeps
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -11,58 +12,59 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for install at {{ dart_install_dir }}..
+- name: Check for install at {{ dart_install_dir }}..
   become: true
-  stat:
+  ansible.builtin.stat:
     path: '{{ dart_install_dir }}'
   changed_when: false
   register: dart_binary
-- when: not dart_binary.stat.exists
+- name: Downloading and installing dart
+  when: not dart_binary.stat.exists
   block:
-    - name: downloading {{ dart_url }} to {{ dart_tmp_zip }}
+    - name: Downloading {{ dart_url }} to {{ dart_tmp_zip }}
       become: true
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ dart_url }}'
         dest: '{{ dart_tmp_zip }}'
-        mode: 0644
+        mode: '644'
         checksum: '{{ dart_checksum }}'
-    - name: mkdir {{ dart_install_dir }}...
+    - name: Mkdir {{ dart_install_dir }}...
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ dart_install_dir }}'
         state: directory
-        mode: 0755
+        mode: '755'
     - name: unarchive {{ dart_tmp_zip }}
       become: true
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ dart_tmp_zip }}'
         dest: '{{ dart_install_dir }}'
         creates: '{{ dart_sdk_install_dir }}'
-    - name: chmod 0755 bin dirs
+    - name: chmod 755 bin dirs
       with_items:
         - '{{ dart_sdk_install_dir }}'
         - '{{ dart_sdk_install_dir }}/bin'
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ item }}'
         state: directory
-        mode: 0755
+        mode: '755'
   always:
-    - name: rm -f {{ dart_tmp_zip }}
+    - name: Rm -f {{ dart_tmp_zip }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ dart_tmp_zip }}'
         state: absent
-- name: link {{ dart_sdk_link_dir }} to {{ dart_sdk_install_dir }}
+- name: Link {{ dart_sdk_link_dir }} to {{ dart_sdk_install_dir }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ dart_sdk_install_dir }}'
     dest: '{{ dart_sdk_link_dir }}'
     state: link
@@ -72,7 +74,7 @@
   with_items:
     - f: dart.sh
       d: /etc/profile.d
-  template:
+  ansible.builtin.template:
     src: '{{ item.f }}.j2'
     dest: '{{ item.d }}/{{ item.f }}'
     mode: '{{ item.m | default("0644") }}'
