@@ -36,7 +36,7 @@
         path: '{{ dart_install_dir }}'
         state: directory
         mode: '755'
-    - name: unarchive {{ dart_tmp_zip }}
+    - name: Unarchive {{ dart_tmp_zip }}
       become: true
       become_user: root
       ansible.builtin.unarchive:
@@ -44,7 +44,7 @@
         src: '{{ dart_tmp_zip }}'
         dest: '{{ dart_install_dir }}'
         creates: '{{ dart_sdk_install_dir }}'
-    - name: chmod 755 bin dirs
+    - name: Chmod 755 bin dirs
       with_items:
         - '{{ dart_sdk_install_dir }}'
         - '{{ dart_sdk_install_dir }}/bin'
