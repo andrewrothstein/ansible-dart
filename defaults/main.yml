@@ -1,5 +1,5 @@
 ---
-dart_ver: 3.4.0
+dart_ver: 3.4.1
 dart_channel: stable
 dart_os_map:
   Linux: linux
@@ -526,3 +526,21 @@ dart_checksums:
       windows-ia32: sha256:0445e6a1a1337e2ec1789ccac8cf74d37574b3db385a65d6c4f543a5bc6bfeec
       # https://storage.googleapis.com/dart-archive/channels/stable/release/3.4.0/sdk/dartsdk-windows-x64-release.zip.sha256sum
       windows-x64: sha256:7b69171ff9db80e03acb43ca6f745d223c9e431f71b933c27e29608c87154333
+  '3.4.1':
+    stable:
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.4.1/sdk/dartsdk-macos-x64-release.zip.sha256sum
+      macos-x64: sha256:c6748621035b13994c3e77073a2cf9d9eb007e8d0b93a1f6329b7870cb5e2798
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.4.1/sdk/dartsdk-macos-arm64-release.zip.sha256sum
+      macos-arm64: sha256:02ac6e6269da03f9d99d01376c3186d95876e72da98d265bb8d541a31db9a575
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.4.1/sdk/dartsdk-linux-x64-release.zip.sha256sum
+      linux-x64: sha256:d1078d3dc8d69b58b0e9b84e639288206631ae7bf88b13629788e8962029d142
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.4.1/sdk/dartsdk-linux-ia32-release.zip.sha256sum
+      linux-ia32: sha256:1be254b42d3ad123219e7bdf84d819ae43e863286bb55b4f48cea4d630319bb4
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.4.1/sdk/dartsdk-linux-arm-release.zip.sha256sum
+      linux-arm: sha256:e04cfe81672dcc126640669f6fc881ba154028e3f2ee22b57b13d0cb54007b9e
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.4.1/sdk/dartsdk-linux-arm64-release.zip.sha256sum
+      linux-arm64: sha256:84bc75b0ec3eb5b18690bde364a5a144ccf110f4599c4a2a7d2747d08d9383a8
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.4.1/sdk/dartsdk-windows-ia32-release.zip.sha256sum
+      windows-ia32: sha256:2ab698a9408ebcc2cdc27535ced17ff9d030c12aecdc643c17dfbfc3ebc03548
+      # https://storage.googleapis.com/dart-archive/channels/stable/release/3.4.1/sdk/dartsdk-windows-x64-release.zip.sha256sum
+      windows-x64: sha256:bd67f24aeb44b06fa19d3566030b9c741d480160403ee670c962dd5b7f759692
